@@ -16,28 +16,28 @@
         tri_layer {
             if-layers = <1 2>;
             then-layer = <3>;
+            };
         };
-    };
 
-    keymap {
-        compatible = "zmk,keymap";
+        keymap {
+            compatible = "zmk,keymap";
 
-        base {
-            display-name = "BASE";
-            bindings = <
-//    ┌──────┬───┬───┬───┬──────┬────────┐               ┌────────┬──────┬───┬───┬───┬──────┐
-//    │ tab  │ Q │ W │ E │  R   │   T    │               │   Y    │  U   │ I │ O │ P │ bspc │
-//    ├──────┼───┼───┼───┼──────┼────────┤               ├────────┼──────┼───┼───┼───┼──────┤
-//    │ lsft │ A │ S │ D │  F   │   G    │               │   H    │  J   │ K │ L │ ; │  '   │
-//    ├──────┼───┼───┼───┼──────┼────────┤               ├────────┼──────┼───┼───┼───┼──────┤
-//    │ lctl │ Z │ X │ C │  V   │   B    │               │   N    │  M   │ , │ . │ / │ esc  │
-//    └──────┴───┴───┴───┼──────┼────────┼─────┐   ┌─────┼────────┼──────┼───┴───┴───┴──────┘
-//                       │ lgui │ mo SYM │ spc │   │ ent │ mo NAV │ ralt │
-//                       └──────┴────────┴─────┘   └─────┴────────┴──────┘
-  &kp TAB     &kp Q   &kp W   &kp E   &kp R      &kp T                               &kp Y     &kp U      &kp I       &kp O     &kp P      &kp BSPC
-  &kp LSHFT   &kp A   &kp S   &kp D   &kp F      &kp G                               &kp H     &kp J      &kp K       &kp L     &kp SEMI   &kp SQT
-  &kp LCTRL   &kp Z   &kp X   &kp C   &kp V      &kp B                               &kp N     &kp M      &kp COMMA   &kp DOT   &kp FSLH   &kp ESC
-                                      &kp LGUI   &mo SYM   &kp SPACE       &kp RET   &mo NAV   &kp RALT
+            base {
+                display-name = "BASE";
+                bindings = <
+//    ┌──────┬───┬───┬───┬──────┬─────────┐               ┌─────────┬──────┬───┬───┬───┬──────┐
+//    │ tab  │ Q │ W │ E │  R   │    T    │               │    Y    │  U   │ I │ O │ P │ bspc │
+//    ├──────┼───┼───┼───┼──────┼─────────┤               ├─────────┼──────┼───┼───┼───┼──────┤
+//    │ lsft │ A │ S │ D │  F   │    G    │               │    H    │  J   │ K │ L │ ; │  '   │
+//    ├──────┼───┼───┼───┼──────┼─────────┤               ├─────────┼──────┼───┼───┼───┼──────┤
+//    │ lctl │ Z │ X │ C │  V   │    B    │               │    N    │  M   │ , │ . │ / │ esc  │
+//    └──────┴───┴───┴───┼──────┼─────────┼─────┐   ┌─────┼─────────┼──────┼───┴───┴───┴──────┘
+//                       │ lgui │ mo SYMB │ spc │   │ ent │ mo NAVI │ ralt │
+//                       └──────┴─────────┴─────┘   └─────┴─────────┴──────┘
+  &kp TAB     &kp Q   &kp W   &kp E   &kp R      &kp T                                &kp Y      &kp U      &kp I       &kp O     &kp P      &kp BSPC
+  &kp LSHFT   &kp A   &kp S   &kp D   &kp F      &kp G                                &kp H      &kp J      &kp K       &kp L     &kp SEMI   &kp SQT
+  &kp LCTRL   &kp Z   &kp X   &kp C   &kp V      &kp B                                &kp N      &kp M      &kp COMMA   &kp DOT   &kp FSLH   &kp ESC
+                                      &kp LGUI   &mo SYMB   &kp SPACE       &kp RET   &mo NAVI   &kp RALT
             >;
         };
 
