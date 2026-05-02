@@ -1,0 +1,103 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
+
+#define BASE 0
+#define NAV  1
+#define SYM  2
+#define ADJ  3
+#define BT   4
+
+/ {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+
+            flavor = "balanced";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <125>;
+
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri_layer {
+            if-layers = <NAV SYM>;
+            then-layer = <ADJ>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        base {
+            display-name = "BASE";
+            bindings = <
+  &kp TAB    &kp Q        &kp W        &kp E         &kp R          &kp T                              &kp Y       &kp U          &kp I         &kp O        &kp P           &kp BSPC
+  &kp ESC    &hm LGUI A   &hm LALT S   &hm LCTRL D   &hm LSHFT F    &kp G                              &kp H       &hm RSHFT J    &hm RCTRL K   &hm RALT L   &hm RGUI SEMI   &kp SQT
+  &kp LCTRL  &kp Z        &kp X        &kp C         &kp V          &kp B                              &kp N       &kp M          &kp COMMA     &kp DOT      &kp FSLH        &kp ESC
+                                                    &kp LGUI       &mo NAV      &kp SPACE     &kp RET   &mo SYM     &kp RALT
+            >;
+        };
+
+        nav {
+            display-name = "NAV";
+            bindings = <
+  &kp GRAVE  &kp N1       &kp N2       &kp N3        &kp N4         &kp N5                             &kp N6      &kp N7         &kp N8        &kp N9       &kp N0          &kp BSPC
+  &kp ESC    &kp LC(C)    &kp LC(R)    &kp LC(A)     &kp LC(E)      &kp LC(K)                          &kp LEFT    &kp DOWN       &kp UP        &kp RIGHT    &kp LG(LBKT)    &kp LG(RBKT)
+  &kp LSHFT  &kp LG(Z)    &kp LG(X)    &kp LG(C)     &kp LG(V)      &kp LC(W)                          &kp HOME    &kp PG_DN      &kp PG_UP     &kp END      &kp LC(TAB)     &kp LS(LC(TAB))
+                                                    &kp LGUI       &trans      &kp SPACE     &kp RET   &trans      &kp RALT
+            >;
+        };
+
+        sym {
+            display-name = "SYM";
+            bindings = <
+  &kp TAB    &kp EXCL     &kp AT       &kp HASH      &kp DLLR       &kp PRCNT                          &kp CARET   &kp AMPS       &kp KP_MULTIPLY &kp LPAR    &kp RPAR        &kp BSPC
+  &kp LCTRL  &kp GRAVE    &kp MINUS    &kp EQUAL     &kp UNDER      &kp PLUS                           &kp MINUS   &kp EQUAL      &kp LBKT      &kp RBKT     &kp BSLH        &kp GRAVE
+  &kp LSHFT  &kp TILDE    &kp PIPE     &kp BSLH      &kp LBRC       &kp RBRC                           &kp UNDER   &kp PLUS       &kp LBRC      &kp RBRC     &kp PIPE        &kp TILDE
+                                                    &kp LGUI       &trans      &kp SPACE     &kp RET   &trans      &kp RALT
+            >;
+        };
+
+        adj {
+            display-name = "ADJ";
+            bindings = <
+  &mo BT     &kp F7       &kp F8       &kp F9        &kp F10        &kp F11                            &kp C_VOL_DN &kp C_MUTE    &kp C_VOL_UP  &trans      &trans         &kp BSPC
+  &studio_unlock &kp F1   &kp F2       &kp F3        &kp F4         &kp F5                             &kp F6       &kp F12       &out OUT_USB  &out OUT_BLE &bootloader    &sys_reset
+  &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4                       &trans       &trans        &trans        &trans      &trans         &trans
+                                                    &kp LGUI       &trans      &kp SPACE     &kp RET   &trans      &kp RALT
+            >;
+        };
+
+        bt {
+            display-name = "BT";
+            bindings = <
+  &kp TAB    &kp N1       &kp N2       &kp N3        &kp N4         &kp N5                             &kp N6      &kp N7         &kp N8        &kp N9       &kp N0          &kp BSPC
+  &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4                       &kp LEFT    &kp DOWN       &kp UP        &kp RIGHT    &kp LG(LBKT)    &kp LG(RBKT)
+  &kp LSHFT  &studio_unlock &trans     &trans        &trans         &trans                             &kp HOME    &kp PG_DN      &kp PG_UP     &kp END      &kp LC(TAB)     &kp LS(LC(TAB))
+                                                    &kp LGUI       &trans      &kp SPACE     &kp RET   &trans      &kp RALT
+            >;
+        };
+
+        extra_1 {
+            status = "reserved";
+        };
+
+        extra_2 {
+            status = "reserved";
+        };
+
+        extra_3 {
+            status = "reserved";
+        };
+    };
+};
