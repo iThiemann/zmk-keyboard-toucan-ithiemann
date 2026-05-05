@@ -2,11 +2,11 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/pointing.h>
 
 // To override the default movement or scrolling max velocities 
-// #define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
-// #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+#include <dt-bindings/zmk/pointing.h>
 
 // Autoshift Macro
 #define AS(keycode) &as LS(keycode) keycode     
@@ -352,6 +352,14 @@
 };
 
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+            };
+        };
+
         keymap {
             compatible = "zmk,keymap";
 
