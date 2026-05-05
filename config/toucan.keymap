@@ -13,11 +13,14 @@
 // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 #define MO_TOG(layer) &mo_tog layer layer   
 
-#define BASE 0
-#define SYMB 1
-#define NAVI 2 
-#define ADJ  3
-#define BT   4
+#define BASE    0
+#define SYMB    1
+#define NAVI    2
+#define MOUSE   3
+#define FUNC    4
+#define NUMPAD  5
+#define SYST    6
+#define COMBOS  7
 
 // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/mod-morph#mods
 // https://v0-3-branch.zmk.dev/docs/keymaps/modifiers
@@ -280,9 +283,9 @@
             >;
         };
 
-        sym {
-            display-name = "SYMB";
-            bindings = <
+            symb {
+                display-name = "SYMB";
+                bindings = <
 //    ┌──────┬────────┬───────┬──────┬────────────┬──────────┐               ┌────────┬──────────────┬───┬───┬───┬──────┐
 //    │ tab  │   1    │   2   │  3   │     4      │    5     │               │   6    │      7       │ 8 │ 9 │ 0 │ bspc │
 //    ├──────┼────────┼───────┼──────┼────────────┼──────────┤               ├────────┼──────────────┼───┼───┼───┼──────┤
@@ -299,9 +302,9 @@
             >;
         };
 
-        nav {
-            display-name = "NAVI";
-            bindings = <
+            navi {
+                display-name = "NAVI";
+                bindings = <
 //    ┌──────┬─────┬─────┬─────┬──────┬─────┐               ┌──────┬──────┬──────┬──────┬─────────────────┬───────────┐
 //    │ tab  │  1  │  2  │  3  │  4   │  5  │               │  6   │  7   │  8   │  9   │        0        │   bspc    │
 //    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
@@ -318,9 +321,85 @@
             >;
         };
 
-        adj {
-            display-name = "ADJ";
-            bindings = <
+            mouse {
+                display-name = "MOUSE";
+                bindings = <
+//    ┌──────┬─────┬─────┬─────┬──────┬─────┐               ┌──────┬──────┬──────┬──────┬─────────────────┬───────────┐
+//    │ tab  │  1  │  2  │  3  │  4   │  5  │               │  6   │  7   │  8   │  9   │        0        │   bspc    │
+//    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
+//    │ lsft │     │     │     │      │     │               │ left │ down │  up  │ rght │     lgui([)     │  lgui(])  │
+//    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
+//    │ lctl │     │     │     │      │     │               │ home │ pgdn │ pgup │ end  │ lsft(lctl(tab)) │ lctl(tab) │
+//    └──────┴─────┴─────┴─────┼──────┼─────┼─────┐   ┌─────┼──────┼──────┼──────┴──────┴─────────────────┴───────────┘
+//                             │ lgui │     │ spc │   │ ent │      │ ralt │
+//                             └──────┴─────┴─────┘   └─────┴──────┴──────┘
+  &kp TAB     &kp N1   &kp N2   &kp N3   &kp N4     &kp N5                             &kp N6     &kp N7      &kp N8      &kp N9      &kp N0            &kp BSPC
+  &kp LSHFT   &trans   &trans   &trans   &trans     &trans                             &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &kp LG(LBKT)      &kp LG(RBKT)
+  &kp LCTRL   &trans   &trans   &trans   &trans     &trans                             &kp HOME   &kp PG_DN   &kp PG_UP   &kp END     &kp LS(LC(TAB))   &kp LC(TAB)
+                                         &kp LGUI   &trans   &kp SPACE       &kp RET   &trans     &kp RALT
+            >;
+        };
+
+            func {
+                display-name = "FUNC";
+                bindings = <
+//    ┌──────┬─────┬─────┬─────┬──────┬─────┐               ┌──────┬──────┬──────┬──────┬─────────────────┬───────────┐
+//    │ tab  │  1  │  2  │  3  │  4   │  5  │               │  6   │  7   │  8   │  9   │        0        │   bspc    │
+//    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
+//    │ lsft │     │     │     │      │     │               │ left │ down │  up  │ rght │     lgui([)     │  lgui(])  │
+//    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
+//    │ lctl │     │     │     │      │     │               │ home │ pgdn │ pgup │ end  │ lsft(lctl(tab)) │ lctl(tab) │
+//    └──────┴─────┴─────┴─────┼──────┼─────┼─────┐   ┌─────┼──────┼──────┼──────┴──────┴─────────────────┴───────────┘
+//                             │ lgui │     │ spc │   │ ent │      │ ralt │
+//                             └──────┴─────┴─────┘   └─────┴──────┴──────┘
+  &kp TAB     &kp N1   &kp N2   &kp N3   &kp N4     &kp N5                             &kp N6     &kp N7      &kp N8      &kp N9      &kp N0            &kp BSPC
+  &kp LSHFT   &trans   &trans   &trans   &trans     &trans                             &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &kp LG(LBKT)      &kp LG(RBKT)
+  &kp LCTRL   &trans   &trans   &trans   &trans     &trans                             &kp HOME   &kp PG_DN   &kp PG_UP   &kp END     &kp LS(LC(TAB))   &kp LC(TAB)
+                                         &kp LGUI   &trans   &kp SPACE       &kp RET   &trans     &kp RALT
+            >;
+        };
+
+            numpad {
+                display-name = "NUMPAD";
+                bindings = <
+//    ┌──────┬─────┬─────┬─────┬──────┬─────┐               ┌──────┬──────┬──────┬──────┬─────────────────┬───────────┐
+//    │ tab  │  1  │  2  │  3  │  4   │  5  │               │  6   │  7   │  8   │  9   │        0        │   bspc    │
+//    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
+//    │ lsft │     │     │     │      │     │               │ left │ down │  up  │ rght │     lgui([)     │  lgui(])  │
+//    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
+//    │ lctl │     │     │     │      │     │               │ home │ pgdn │ pgup │ end  │ lsft(lctl(tab)) │ lctl(tab) │
+//    └──────┴─────┴─────┴─────┼──────┼─────┼─────┐   ┌─────┼──────┼──────┼──────┴──────┴─────────────────┴───────────┘
+//                             │ lgui │     │ spc │   │ ent │      │ ralt │
+//                             └──────┴─────┴─────┘   └─────┴──────┴──────┘
+  &kp TAB     &kp N1   &kp N2   &kp N3   &kp N4     &kp N5                             &kp N6     &kp N7      &kp N8      &kp N9      &kp N0            &kp BSPC
+  &kp LSHFT   &trans   &trans   &trans   &trans     &trans                             &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &kp LG(LBKT)      &kp LG(RBKT)
+  &kp LCTRL   &trans   &trans   &trans   &trans     &trans                             &kp HOME   &kp PG_DN   &kp PG_UP   &kp END     &kp LS(LC(TAB))   &kp LC(TAB)
+                                         &kp LGUI   &trans   &kp SPACE       &kp RET   &trans     &kp RALT
+            >;
+        };
+
+            syst {
+                display-name = "SYST";
+                bindings = <
+//    ┌──────┬─────┬─────┬─────┬──────┬─────┐               ┌──────┬──────┬──────┬──────┬─────────────────┬───────────┐
+//    │ tab  │  1  │  2  │  3  │  4   │  5  │               │  6   │  7   │  8   │  9   │        0        │   bspc    │
+//    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
+//    │ lsft │     │     │     │      │     │               │ left │ down │  up  │ rght │     lgui([)     │  lgui(])  │
+//    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
+//    │ lctl │     │     │     │      │     │               │ home │ pgdn │ pgup │ end  │ lsft(lctl(tab)) │ lctl(tab) │
+//    └──────┴─────┴─────┴─────┼──────┼─────┼─────┐   ┌─────┼──────┼──────┼──────┴──────┴─────────────────┴───────────┘
+//                             │ lgui │     │ spc │   │ ent │      │ ralt │
+//                             └──────┴─────┴─────┘   └─────┴──────┴──────┘
+  &kp TAB     &kp N1   &kp N2   &kp N3   &kp N4     &kp N5                             &kp N6     &kp N7      &kp N8      &kp N9      &kp N0            &kp BSPC
+  &kp LSHFT   &trans   &trans   &trans   &trans     &trans                             &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &kp LG(LBKT)      &kp LG(RBKT)
+  &kp LCTRL   &trans   &trans   &trans   &trans     &trans                             &kp HOME   &kp PG_DN   &kp PG_UP   &kp END     &kp LS(LC(TAB))   &kp LC(TAB)
+                                         &kp LGUI   &trans   &kp SPACE       &kp RET   &trans     &kp RALT
+            >;
+        };
+
+            combos {
+                display-name = "COMBOS";
+                bindings = <
 //    ┌──────┬─────┬────┬────┬──────┬─────────┐               ┌─────────┬──────┬──────┬─────┬─────┬──────┐
 //    │ tab  │     │ f7 │ f8 │  f9  │   f12   │               │  vold   │ mute │ volu │     │     │ bspc │
 //    ├──────┼─────┼────┼────┼──────┼─────────┤               ├─────────┼──────┼──────┼─────┼─────┼──────┤
@@ -337,9 +416,9 @@
             >;
         };
 
-        bt {
-            display-name = "BT";
-            bindings = <
+            extra {
+                display-name = "EXTRA";
+                bindings = <
 //    ┌────────┬────────────────┬──────────┬──────────┬──────────┬──────────┐               ┌──────┬──────┬──────┬──────┬───────────┬─────────────────┐
 //    │  tab   │       1        │    2     │    3     │    4     │    5     │               │  6   │  7   │  8   │  9   │     0     │      bspc       │
 //    ├────────┼────────────────┼──────────┼──────────┼──────────┼──────────┤               ├──────┼──────┼──────┼──────┼───────────┼─────────────────┤
