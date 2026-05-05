@@ -36,8 +36,9 @@
             tapping-term-ms = <300>;
             quick-tap-ms = <300>;
             bindings = <&kp>, <&kp>;
-            #hold-trigger-key-positions = < ... >; // List of keys on the right side of the keyboard
-            #hold-trigger-on-release;
+            // List of keys on the right side of the keyboard
+            // #hold-trigger-key-positions = < ... >; 
+            // #hold-trigger-on-release;
         };
 
         hrm_r: hrm_r {
@@ -49,8 +50,9 @@
             tapping-term-ms = <300>;
             quick-tap-ms = <300>;
             bindings = <&kp>, <&kp>;
-            #hold-trigger-key-positions = < ... >; // List of keys on the left side of the keyboard
-            #hold-trigger-on-release;
+            // List of keys on the left side of the keyboard
+            // #hold-trigger-key-positions = < ... >; 
+            // #hold-trigger-on-release;
         };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/hold-tap?examples=home_row_mods#positional-hold-tap-and-hold-trigger-key-positions
