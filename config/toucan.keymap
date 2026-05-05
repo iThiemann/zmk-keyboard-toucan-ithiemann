@@ -214,9 +214,9 @@
         bspc_del: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_LS|MOD_RS)>;
-            keep-mods = <(MOD_RS)>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
         };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/layers#configuration
