@@ -174,6 +174,7 @@
             toggle-mode = "off";
         };
 
+        // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/sticky-layer
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/sticky-key
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
@@ -183,11 +184,7 @@
             quick-release;
             ignore-modifiers;
         };
-        // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/sticky-layer
-        &sl {
-            release-after-ms = <1200>;
-        };
-
+        
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/mouse-emulation
         // Mouse Button Press &mkp
         // MB1, LCLK	Left click
