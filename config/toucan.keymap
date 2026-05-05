@@ -30,29 +30,29 @@
         hrm_l: hrm_l {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            #flavor = "balanced";
+            // flavor = "balanced";
             flavor = "tap-preferred";
             require-prior-idle-ms = <0>;
             tapping-term-ms = <300>;
             quick-tap-ms = <300>;
             bindings = <&kp>, <&kp>;
             // List of keys on the right side of the keyboard
-            // #hold-trigger-key-positions = < ... >; 
-            // #hold-trigger-on-release;
+            // hold-trigger-key-positions = < ... >; 
+            // hold-trigger-on-release;
         };
 
         hrm_r: hrm_r {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            #flavor = "balanced";
+            // flavor = "balanced";
             flavor = "tap-preferred";
             require-prior-idle-ms = <0>;
             tapping-term-ms = <300>;
             quick-tap-ms = <300>;
             bindings = <&kp>, <&kp>;
             // List of keys on the left side of the keyboard
-            // #hold-trigger-key-positions = < ... >; 
-            // #hold-trigger-on-release;
+            // hold-trigger-key-positions = < ... >; 
+            // hold-trigger-on-release;
         };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/hold-tap?examples=home_row_mods#positional-hold-tap-and-hold-trigger-key-positions
