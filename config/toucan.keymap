@@ -187,37 +187,37 @@
             bindings = <&kp N1>, <&kp N2>, <&kp N3>;
         };
 
-        td1: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
-        };
+        // td1: tap_dance_1 {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     #binding-cells = <0>;
+        //     tapping-term-ms = <200>;
+        //     bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+        // };
 
-        td2: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
-        };
+        // td2: tap_dance_2 {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     #binding-cells = <0>;
+        //     tapping-term-ms = <200>;
+        //     bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+        // };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/tap-dance?examples=advanced#example-usage
         // Outputs CAPS on a single tap, LS on a single press and hold, and LC when the tap-dance is pressed twice. 
-        td_mt: tap_dance_mod_tap {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt LS CAPS>, <&kp LC>;
-        };
+        // td_mt: tap_dance_mod_tap {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     #binding-cells = <0>;
+        //     tapping-term-ms = <200>;
+        //     bindings = <&mt LSHIFT CAPSLOCK>, <&kp LCTRL>;
+        // };
         
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/mod-morph#advanced-configuration
-        bspc_del: backspace_delete {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-            mods = <(MOD_LSFT | MOD_RSFT)>;
-            keep-mods = <(MOD_RSFT)>;
-        };
+        // bspc_del: backspace_delete {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp BACKSPACE>, <&kp DELETE>;
+        //     mods = <(MOD_LSFT|MOD_RSFT)>;
+        //     keep-mods = <(MOD_RSFT)>;
+        // };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/layers#configuration
         kt_on: key_toggle_on_only {
