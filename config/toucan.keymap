@@ -5,8 +5,9 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // To override the default movement or scrolling max velocities 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+// #define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
+// #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+
 // Autoshift Macro
 #define AS(keycode) &as LS(keycode) keycode     
 // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
