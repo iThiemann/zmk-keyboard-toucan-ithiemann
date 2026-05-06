@@ -81,7 +81,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "Compose1ToNpad";
             #binding-cells = <0>;
-            bindings = <&kp K_CMENU>, <&tog NAVI>;
+            bindings = <&kp K_APP>, <&tog NAVI>;
             tapping-term-ms = <230>;
         };
         
@@ -228,6 +228,9 @@
         };
         
         slq: slq {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&mo>;
             release-after-ms = <1500>;
             quick-release;
             ignore-modifiers;
@@ -351,10 +354,10 @@
 //    └───────────────┴─────────────┴─────────────┴──────────────┼─────────────┼─────────────────┼───────────────┐   ┌───────────────┼─────────────────┼─────────────────┼──────────────┴─────────────┴─────────────┴─────────────┘
 //                                                               │  &skq FUNC  │ &my_lt MOUS esc │ &hml lgui spc │   │ &hmr lgui ent │ &hmr2 NAVI bspc │ &Compose1ToNpad │
 //                                                               └─────────────┴─────────────────┴───────────────┘   └───────────────┴─────────────────┴─────────────────┘
-  &kp TAB          &kp Q          &kp W         &kp E          &kp R          &kp T                                                 &kp Y             &kp U             &kp I          &kp O         &kp P             &kp BSPC
-  &hml LSHFT ESC   &hml LSHFT A   &hml RALT S   &hml2 SYMB D   &hml LCTRL F   &hml LALT G                                           &hmr LALT H       &hmr RCTRL J      &hmr2 SYMB K   &hmr RALT L   &hmr RSHFT SEMI   &hmr RSHFT SQT
-  &kp LCTRL        &kp Z          &kp X         &kp C          &hml RGUI V    &kp B                                                 &kp N             &hmr RGUI M       &kp COMMA      &kp DOT       &kp FSLH          &kp ESC
-                                                               &skq FUNC      &my_lt MOUS ESC   &hml LG SPACE       &hmr LGUI RET   &hmr2 NAVI BSPC   &Compose1ToNpad
+  &kp TAB          &kp Q          &kp W         &kp E          &kp R          &kp T                                                   &kp Y             &kp U             &kp I          &kp O         &kp P             &kp BSPC
+  &hml LSHFT ESC   &hml LSHFT A   &hml RALT S   &hml2 SYMB D   &hml LCTRL F   &hml LALT G                                             &hmr LALT H       &hmr RCTRL J      &hmr2 SYMB K   &hmr RALT L   &hmr RSHFT SEMI   &hmr RSHFT SQT
+  &kp LCTRL        &kp Z          &kp X         &kp C          &hml RGUI V    &kp B                                                   &kp N             &hmr RGUI M       &kp COMMA      &kp DOT       &kp FSLH          &kp ESC
+                                                               &skq FUNC      &my_lt MOUS ESC   &hml LGUI SPACE       &hmr LGUI RET   &hmr2 NAVI BSPC   &Compose1ToNpad
             >;
         };
 
