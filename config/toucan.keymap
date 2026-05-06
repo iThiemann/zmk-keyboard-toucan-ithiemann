@@ -4,14 +4,14 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // To override the default movement or scrolling max velocities 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+// #define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
+// #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 #include <dt-bindings/zmk/pointing.h>
 
 // Autoshift Macro
-#define AS(keycode) &as LS(keycode) keycode     
+// #define AS(keycode) &as LS(keycode) keycode     
 // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
-#define MO_TOG(layer) &mo_tog layer layer   
+// #define MO_TOG(layer) &mo_tog layer layer   
 
 #define KEYS_L 0 1 2 3 4 5  12 13 14 15 16 17  24 25 26 27 28 29  36 37 38 // left hand
 #define KEYS_R 6 7 8 9 10 11  18 19 20 21 22 23  30 31 32 33 34 35  39 40 41 // right hand
@@ -31,34 +31,6 @@
 / {
     // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors#layer-navigation-behaviors
     behaviors {
-
-        hrm_l: hrm_l {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            // flavor = "balanced";
-            flavor = "tap-preferred";
-            require-prior-idle-ms = <0>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <300>;
-            bindings = <&kp>, <&kp>;
-            // List of keys on the right side of the keyboard
-            // hold-trigger-key-positions = < ... >; 
-            // hold-trigger-on-release;
-        };
-
-        hrm_r: hrm_r {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            // flavor = "balanced";
-            flavor = "tap-preferred";
-            require-prior-idle-ms = <0>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <300>;
-            bindings = <&kp>, <&kp>;
-            // List of keys on the left side of the keyboard
-            // hold-trigger-key-positions = < ... >; 
-            // hold-trigger-on-release;
-        };
 
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
@@ -112,7 +84,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "Compose1ToNpad";
             #binding-cells = <0>;
-            bindings = <&kp K_APP>, <&tog 2>;
+            bindings = <&kp K_CMENU>, <&tog 2>;
             tapping-term-ms = <230>;
         };
         
@@ -157,24 +129,24 @@
             display-name = "Layer-Tap";
         };
 
-        as: auto_shift {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping_term_ms = <135>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
+        // as: auto_shift {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     tapping_term_ms = <135>;
+        //     quick_tap_ms = <0>;
+        //     flavor = "tap-preferred";
+        //     bindings = <&kp>, <&kp>;
+        // };
         // Autoshift applied for QWERTY keys
         // AS(Q) AS(W) AS(E) AS(R) AS(T) AS(Y) 
 
-        mo_tog: behavior_mo_tog {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&tog>;
-        };
+        // mo_tog: behavior_mo_tog {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     flavor = "hold-preferred";
+        //     tapping-term-ms = <200>;
+        //     bindings = <&mo>, <&tog>;
+        // };
         // &mo_tog 2 1     // &mo 2 on hold, &tog 1 on tap
         // MO_TOG(3)       // &mo 3 on hold, &tog 3 on tap
         // &mo_tog 4 3     // &mo 4 on hold, &tog 3 on tap
@@ -220,33 +192,33 @@
         // };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/layers#configuration
-        kt_on: key_toggle_on_only {
-            compatible = "zmk,behavior-key-toggle";
-            #binding-cells = <1>;
-            display-name = "Key Toggle On";
-            toggle-mode = "on";
-        };
+        // kt_on: key_toggle_on_only {
+        //     compatible = "zmk,behavior-key-toggle";
+        //     #binding-cells = <1>;
+        //     display-name = "Key Toggle On";
+        //     toggle-mode = "on";
+        // };
 
-        kt_off: key_toggle_off_only {
-            compatible = "zmk,behavior-key-toggle";
-            #binding-cells = <1>;
-            display-name = "Key Toggle Off";
-            toggle-mode = "off";
-        };
+        // kt_off: key_toggle_off_only {
+        //     compatible = "zmk,behavior-key-toggle";
+        //     #binding-cells = <1>;
+        //     display-name = "Key Toggle Off";
+        //     toggle-mode = "off";
+        // };
 
-        tl_on: toggle_layer_on_only {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            display-name = "Toggle Layer On";
-            toggle-mode = "on";
-        };
+        // tl_on: toggle_layer_on_only {
+        //     compatible = "zmk,behavior-toggle-layer";
+        //     #binding-cells = <1>;
+        //     display-name = "Toggle Layer On";
+        //     toggle-mode = "on";
+        // };
 
-        tl_off: toggle_layer_off_only {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            display-name = "Toggle Layer Off";
-            toggle-mode = "off";
-        };
+        // tl_off: toggle_layer_off_only {
+        //     compatible = "zmk,behavior-toggle-layer";
+        //     #binding-cells = <1>;
+        //     display-name = "Toggle Layer Off";
+        //     toggle-mode = "off";
+        // };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/sticky-layer
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/sticky-key
@@ -295,24 +267,24 @@
         // }
 
         // Windows specific 
-        hrm_w: hrm_w {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&kp>;
-            flavor = "tap-preferred";
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <0>;
-            retro-tap;
-        };
+        // hrm_w: hrm_w {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     tapping-term-ms = <200>;
+        //     bindings = <&kp>, <&kp>;
+        //     flavor = "tap-preferred";
+        //     quick-tap-ms = <200>;
+        //     require-prior-idle-ms = <0>;
+        //     retro-tap;
+        // };
 
-        my_mtw: my_mtw {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&kp>;
-        };
+        // my_mtw: my_mtw {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     flavor = "tap-preferred";
+        //     tapping-term-ms = <200>;
+        //     bindings = <&kp>, <&kp>;
+        // };
     };
     
     combos {
@@ -383,10 +355,10 @@
 //    └───────────────┴─────────────┴─────────────┴──────────────┼─────────────┼─────────────────┼───────────────┐   ┌───────────────┼────────────────┼─────────────────┼──────────────┴─────────────┴─────────────┴─────────────┘
 //                                                               │   sl FUNC   │ &my_lt MOUS esc │ &hml lgui spc │   │ &hmr lgui ent │ &hmr NAVI bspc │ &Compose1ToNpad │
 //                                                               └─────────────┴─────────────────┴───────────────┘   └───────────────┴────────────────┴─────────────────┘
-  &kp TAB       &kp Q       &kp W       &kp E          &kp R       &kp T                                               &kp Y            &kp U             &kp I          &kp O       &kp P          &kp BSPC
-  &hml LS ESC   &hml LS A   &hml RA S   &hml2 SYMB D   &hml LC F   &hml LA G                                           &hmr LA H        &hmr RC J         &hmr2 SYMB K   &hmr RA L   &hmr RS SEMI   &hmr RS SQT
-  &kp LC        &kp Z       &kp X       &kp C          &hml RG V   &kp B                                               &kp N            &hmr RG M         &kp COMMA      &kp DOT     &kp FSLH       &kp ESC
-                                                       &sl FUNC    &my_lt MOUS ESC   &hml LG SPACE       &hmr LG RET   &hmr NAVI BSPC   &Compose1ToNpad
+  &kp TAB          &kp Q          &kp W         &kp E          &kp R          &kp T                                                 &kp Y            &kp U             &kp I          &kp O         &kp P             &kp BSPC
+  &hml LSHFT ESC   &hml LSHFT A   &hml RALT S   &hml2 SYMB D   &hml LCTRL F   &hml LALT G                                           &hmr LALT H      &hmr RCTRL J      &hmr2 SYMB K   &hmr RALT L   &hmr RSHFT SEMI   &hmr RSHFT SQT
+  &kp LCTRL        &kp Z          &kp X         &kp C          &hml RGUI V    &kp B                                                 &kp N            &hmr RGUI M       &kp COMMA      &kp DOT       &kp FSLH          &kp ESC
+                                                               &sl FUNC       &my_lt MOUS ESC   &hml LG SPACE       &hmr LGUI RET   &hmr NAVI BSPC   &Compose1ToNpad
             >;
         };
 
