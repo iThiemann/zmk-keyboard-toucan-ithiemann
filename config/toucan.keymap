@@ -230,10 +230,8 @@
         slq: slq {
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
-            bindings = <&mo>;
-            release-after-ms = <1500>;
-            quick-release;
-            ignore-modifiers;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
         };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/mouse-emulation
