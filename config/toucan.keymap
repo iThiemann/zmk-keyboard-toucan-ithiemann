@@ -4,14 +4,14 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // To override the default movement or scrolling max velocities 
-// #define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
-// #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 #include <dt-bindings/zmk/pointing.h>
 
 // Autoshift Macro
-// #define AS(keycode) &as LS(keycode) keycode     
+#define AS(keycode) &as LS(keycode) keycode     
 // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
-// #define MO_TOG(layer) &mo_tog layer layer   
+#define MO_TOG(layer) &mo_tog layer layer   
 
 #define KEYS_L 0 1 2 3 4 5  12 13 14 15 16 17  24 25 26 27 28 29  36 37 38 // left hand
 #define KEYS_R 6 7 8 9 10 11  18 19 20 21 22 23  30 31 32 33 34 35  39 40 41 // right hand
@@ -97,15 +97,15 @@
         };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/hold-tap?examples=home_row_mods#positional-hold-tap-and-hold-trigger-key-positions
-        // pht: positional_hold_tap {
-        //     compatible = "zmk,behavior-hold-tap";
-        //     #binding-cells = <2>;
-        //     flavor = "hold-preferred";
-        //     tapping-term-ms = <400>;
-        //     quick-tap-ms = <200>;
-        //     bindings = <&kp>, <&kp>;
-        //     hold-trigger-key-positions = <1>;    // <---[[the Q key]]
-        // };
+        pht: positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <1>;    // <---[[the Q key]]
+        };
 
         // Flavors: "hold-preferred", "balanced", "tap-preferred" and "tap-unless-interrupted"
         my_mt: my_mt {
@@ -125,24 +125,24 @@
             display-name = "Layer-Tap";
         };
 
-        // as: auto_shift {
-        //     compatible = "zmk,behavior-hold-tap";
-        //     #binding-cells = <2>;
-        //     tapping_term_ms = <135>;
-        //     quick_tap_ms = <0>;
-        //     flavor = "tap-preferred";
-        //     bindings = <&kp>, <&kp>;
-        // };
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <135>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
         // Autoshift applied for QWERTY keys
         // AS(Q) AS(W) AS(E) AS(R) AS(T) AS(Y) 
 
-        // mo_tog: behavior_mo_tog {
-        //     compatible = "zmk,behavior-hold-tap";
-        //     #binding-cells = <2>;
-        //     flavor = "hold-preferred";
-        //     tapping-term-ms = <200>;
-        //     bindings = <&mo>, <&tog>;
-        // };
+        mo_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
+        };
         // &mo_tog 2 1     // &mo 2 on hold, &tog 1 on tap
         // MO_TOG(3)       // &mo 3 on hold, &tog 3 on tap
         // &mo_tog 4 3     // &mo 4 on hold, &tog 3 on tap
@@ -155,66 +155,66 @@
             bindings = <&kp N1>, <&kp N2>, <&kp N3>;
         };
 
-        // td1: tap_dance_1 {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&kp N1>, <&kp N2>, <&kp N3>;
-        // };
+        td1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+        };
 
-        // td2: tap_dance_2 {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&kp N1>, <&kp N2>, <&kp N3>;
-        // };
+        td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+        };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/tap-dance?examples=advanced#example-usage
         // Outputs CAPS on a single tap, LS on a single press and hold, and LC when the tap-dance is pressed twice. 
-        // td_mt: tap_dance_mod_tap {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&mt LSHIFT CAPSLOCK>, <&kp LCTRL>;
-        // };
+        td_mt: tap_dance_mod_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt LS CAPS>, <&kp LC>;
+        };
         
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/mod-morph#advanced-configuration
-        // bspc_del: backspace_delete {
-        //     compatible = "zmk,behavior-mod-morph";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp BACKSPACE>, <&kp DELETE>;
-        //     mods = <(MOD_LSFT|MOD_RSFT)>;
-        //     keep-mods = <(MOD_RSFT)>;
-        // };
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LS|MOD_RS)>;
+            keep-mods = <(MOD_RS)>;
+        };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/layers#configuration
-        // kt_on: key_toggle_on_only {
-        //     compatible = "zmk,behavior-key-toggle";
-        //     #binding-cells = <1>;
-        //     display-name = "Key Toggle On";
-        //     toggle-mode = "on";
-        // };
+        kt_on: key_toggle_on_only {
+            compatible = "zmk,behavior-key-toggle";
+            #binding-cells = <1>;
+            display-name = "Key Toggle On";
+            toggle-mode = "on";
+        };
 
-        // kt_off: key_toggle_off_only {
-        //     compatible = "zmk,behavior-key-toggle";
-        //     #binding-cells = <1>;
-        //     display-name = "Key Toggle Off";
-        //     toggle-mode = "off";
-        // };
+        kt_off: key_toggle_off_only {
+            compatible = "zmk,behavior-key-toggle";
+            #binding-cells = <1>;
+            display-name = "Key Toggle Off";
+            toggle-mode = "off";
+        };
 
-        // tl_on: toggle_layer_on_only {
-        //     compatible = "zmk,behavior-toggle-layer";
-        //     #binding-cells = <1>;
-        //     display-name = "Toggle Layer On";
-        //     toggle-mode = "on";
-        // };
+        tl_on: toggle_layer_on_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer On";
+            toggle-mode = "on";
+        };
 
-        // tl_off: toggle_layer_off_only {
-        //     compatible = "zmk,behavior-toggle-layer";
-        //     #binding-cells = <1>;
-        //     display-name = "Toggle Layer Off";
-        //     toggle-mode = "off";
-        // };
+        tl_off: toggle_layer_off_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
+        };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/sticky-layer
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/sticky-key
