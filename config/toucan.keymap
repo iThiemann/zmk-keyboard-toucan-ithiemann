@@ -148,34 +148,34 @@
         // &mo_tog 4 3     // &mo 4 on hold, &tog 3 on tap
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/tap-dance?examples=advanced#summary
-        td0: tap_dance_0 {
+        td0: td0_brave_bck_fwd {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+            bindings = <&kp LG(LBKT)>, <&kp RG(RBKT)>;
         };
 
-        td1: tap_dance_1 {
+        td1: td1_brave_tab_fwd_bck {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+            bindings = <&kp LS(LC(TAB))>, <&kp LC(TAB)>;
         };
-
-        td2: tap_dance_2 {
+        // Outputs RBKT ] on a single tab, RBRC } when the tap-dance is pressed twice.
+        td2: td2_RBKT_RBRC {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+            bindings = <&kp RBKT>, <&kp RBRC>;
         };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/tap-dance?examples=advanced#example-usage
-        // Outputs CAPS on a single tap, LS on a single press and hold, and LC when the tap-dance is pressed twice. 
-        td_mt: tap_dance_mod_tap {
+        // Outputs LBKT [ on a single tap, RG on a single press and hold, and LBRC { when the tap-dance is pressed twice. 
+        td_mt0: td_mt0_RG_LBKT_LBRC {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt LSHIFT CAPSLOCK>, <&kp LCTRL>;
+            bindings = <&mt RGUI LBKT>, <&kp LBRC>;
         };
         
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/mod-morph#advanced-configuration
@@ -225,13 +225,6 @@
             release-after-ms = <1000>;
             quick-release;
             ignore-modifiers;
-        };
-        
-        slq: slq {
-            compatible = "zmk,behavior-sticky-key";
-            #binding-cells = <1>;
-            bindings = <&kp>;
-            release-after-ms = <1000>;
         };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/mouse-emulation
@@ -353,57 +346,57 @@
         symb {
             display-name = "SYMB";
             bindings = <
-//    ┌──────┬────────┬───────┬──────┬────────────┬──────────┐               ┌────────┬──────────────┬───┬───┬───┬──────┐
-//    │ tab  │   1    │   2   │  3   │     4      │    5     │               │   6    │      7       │ 8 │ 9 │ 0 │ bspc │
-//    ├──────┼────────┼───────┼──────┼────────────┼──────────┤               ├────────┼──────────────┼───┼───┼───┼──────┤
-//    │ lsft │  app   │ again │ undo │   K_FIND   │ K_SELECT │               │ C_HELP │      -       │ = │ [ │ ] │  \   │
-//    ├──────┼────────┼───────┼──────┼────────────┼──────────┤               ├────────┼──────────────┼───┼───┼───┼──────┤
-//    │ lctl │ C_QUIT │  cut  │ copy │ C_AC_PASTE │   caps   │               │   ~    │ C_AC_REFRESH │ , │ . │ / │ esc  │
-//    └──────┴────────┴───────┴──────┼────────────┼──────────┼─────┐   ┌─────┼────────┼──────────────┼───┴───┴───┴──────┘
-//                                   │    lgui    │          │ spc │   │ ent │        │     ralt     │
-//                                   └────────────┴──────────┴─────┘   └─────┴────────┴──────────────┘
-  &kp TAB     &kp N1       &kp N2         &kp N3          &kp N4           &kp N5                                   &kp N6       &kp N7             &kp N8      &kp N9     &kp N0     &kp BSPC
-  &kp LSHFT   &kp K_APP    &kp K_REDO     &kp K_UNDO      &kp K_FIND       &kp K_SELECT                             &kp C_HELP   &kp MINUS          &kp EQUAL   &kp LBKT   &kp RBKT   &kp BSLH
-  &kp LCTRL   &kp C_QUIT   &kp C_AC_CUT   &kp C_AC_COPY   &kp C_AC_PASTE   &kp CAPS                                 &kp TILDE    &kp C_AC_REFRESH   &kp COMMA   &kp DOT    &kp FSLH   &kp ESC
-                                                          &kp LGUI         &trans         &kp SPACE       &kp RET   &trans       &kp RALT
+//    ┌───────────────┬───────────────┬───────────────┬────────────────┬───────────────┬────────────────┐               ┌────────────────┬────────────────┬───────────────┬────────────────┬───────────────┬──────┐
+//    │       `       │       1       │       2       │       3        │       4       │       5        │               │       6        │       7        │       8       │       9        │       0       │ bspc │
+//    ├───────────────┼───────────────┼───────────────┼────────────────┼───────────────┼────────────────┤               ├────────────────┼────────────────┼───────────────┼────────────────┼───────────────┼──────┤
+//    │ &hml lsft esc │ &hml lsft esc │ &hml ralt ins │ &hml2 NAVI del │ &hml lctl tab │ &hml lalt bspc │               │ &hmr lalt left │ &hmr rctl down │ &hmr2 NAVI up │ &hmr ralt rght │ &hmr rsft ent │  \   │
+//    ├───────────────┼───────────────┼───────────────┼────────────────┼───────────────┼────────────────┤               ├────────────────┼────────────────┼───────────────┼────────────────┼───────────────┼──────┤
+//    │     lctl      │       `       │       -       │       =        │  &hml rgui [  │       ]        │               │       \        │  &hmr rgui '   │       ,       │       .        │       /       │ rctl │
+//    └───────────────┴───────────────┴───────────────┴────────────────┼───────────────┼────────────────┼─────┐   ┌─────┼────────────────┼────────────────┼───────────────┴────────────────┴───────────────┴──────┘
+//                                                                     │               │    to BASE     │     │   │     │    to BASE     │                │
+//                                                                     └───────────────┴────────────────┴─────┘   └─────┴────────────────┴────────────────┘
+  &kp GRAVE        &kp N1           &kp N2          &kp N3           &kp N4           &kp N5                                 &kp N6           &kp N7            &kp N8          &kp N9            &kp N0           &kp BSPC
+  &hml LSHFT ESC   &hml LSHFT ESC   &hml RALT INS   &hml2 NAVI DEL   &hml LCTRL TAB   &hml LALT BSPC                         &hmr LALT LEFT   &hmr RCTRL DOWN   &hmr2 NAVI UP   &hmr RALT RIGHT   &hmr RSHFT RET   &kp BSLH
+  &kp LCTRL        &kp GRAVE        &kp MINUS       &kp EQUAL        &hml RGUI LBKT   &kp RBKT                               &kp BSLH         &hmr RGUI SQT     &kp COMMA       &kp PERIOD        &kp FSLH         &kp RCTRL
+                                                                     &trans           &to BASE         &trans       &trans   &to BASE         &trans
             >;
         };
 
         navi {
             display-name = "NAVI";
             bindings = <
-//    ┌──────┬─────┬─────┬─────┬──────┬─────┐               ┌──────┬──────┬──────┬──────┬─────────────────┬───────────┐
-//    │ tab  │  1  │  2  │  3  │  4   │  5  │               │  6   │  7   │  8   │  9   │        0        │   bspc    │
-//    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
-//    │ lsft │     │     │     │      │     │               │ left │ down │  up  │ rght │     lgui([)     │  lgui(])  │
-//    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
-//    │ lctl │     │     │     │      │     │               │ home │ pgdn │ pgup │ end  │ lsft(lctl(tab)) │ lctl(tab) │
-//    └──────┴─────┴─────┴─────┼──────┼─────┼─────┐   ┌─────┼──────┼──────┼──────┴──────┴─────────────────┴───────────┘
-//                             │ lgui │     │ spc │   │ ent │      │ ralt │
-//                             └──────┴─────┴─────┘   └─────┴──────┴──────┘
-  &kp TAB     &kp N1   &kp N2   &kp N3   &kp N4     &kp N5                             &kp N6     &kp N7      &kp N8      &kp N9      &kp N0            &kp BSPC
-  &kp LSHFT   &trans   &trans   &trans   &trans     &trans                             &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &kp LG(LBKT)      &kp LG(RBKT)
-  &kp LCTRL   &trans   &trans   &trans   &trans     &trans                             &kp HOME   &kp PG_DN   &kp PG_UP   &kp END     &kp LS(LC(TAB))   &kp LC(TAB)
-                                         &kp LGUI   &trans   &kp SPACE       &kp RET   &trans     &kp RALT
+//    ┌───────────────┬─────┬─────┬─────┬─────┬──────┐               ┌──────┬──────┬──────┬──────┬──────┬──────┐
+//    │      tab      │     │     │     │     │      │               │ home │ del  │ ins  │ end  │ bspc │ bspc │
+//    ├───────────────┼─────┼─────┼─────┼─────┼──────┤               ├──────┼──────┼──────┼──────┼──────┼──────┤
+//    │ &hml lsft esc │ esc │ ins │ del │ tab │ bspc │               │ left │ down │  up  │ rght │ ent  │ &td0 │
+//    ├───────────────┼─────┼─────┼─────┼─────┼──────┤               ├──────┼──────┼──────┼──────┼──────┼──────┤
+//    │     lctl      │     │     │     │     │      │               │      │ pgdn │ pgup │      │      │ &td1 │
+//    └───────────────┴─────┴─────┴─────┼─────┼──────┼─────┐   ┌─────┼──────┼──────┼──────┴──────┴──────┴──────┘
+//                                      │     │      │     │   │     │      │      │
+//                                      └─────┴──────┴─────┘   └─────┴──────┴──────┘
+  &kp TAB          &none     &none     &none     &none     &none                            &kp HOME   &kp DEL     &kp INS     &kp END     &kp BSPC   &kp BSPC
+  &hml LSHFT ESC   &kp ESC   &kp INS   &kp DEL   &kp TAB   &kp BSPC                         &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &kp RET    &td0
+  &kp LCTRL        &none     &none     &none     &none     &none                            &none      &kp PG_DN   &kp PG_UP   &none       &none      &td1
+                                                 &trans    &trans     &trans       &trans   &trans     &trans
             >;
         };
 
         mous {
             display-name = "MOUS";
             bindings = <
-//    ┌──────┬─────┬─────┬─────┬──────┬─────┐               ┌──────┬──────┬──────┬──────┬─────────────────┬───────────┐
-//    │ tab  │  1  │  2  │  3  │  4   │  5  │               │  6   │  7   │  8   │  9   │        0        │   bspc    │
-//    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
-//    │ lsft │     │     │     │      │     │               │ left │ down │  up  │ rght │     lgui([)     │  lgui(])  │
-//    ├──────┼─────┼─────┼─────┼──────┼─────┤               ├──────┼──────┼──────┼──────┼─────────────────┼───────────┤
-//    │ lctl │     │     │     │      │     │               │ home │ pgdn │ pgup │ end  │ lsft(lctl(tab)) │ lctl(tab) │
-//    └──────┴─────┴─────┴─────┼──────┼─────┼─────┐   ┌─────┼──────┼──────┼──────┴──────┴─────────────────┴───────────┘
-//                             │ lgui │     │ spc │   │ ent │      │ ralt │
-//                             └──────┴─────┴─────┘   └─────┴──────┴──────┘
-  &kp TAB     &kp N1   &kp N2   &kp N3   &kp N4     &kp N5                             &kp N6     &kp N7      &kp N8      &kp N9      &kp N0            &kp BSPC
-  &kp LSHFT   &trans   &trans   &trans   &trans     &trans                             &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &kp LG(LBKT)      &kp LG(RBKT)
-  &kp LCTRL   &trans   &trans   &trans   &trans     &trans                             &kp HOME   &kp PG_DN   &kp PG_UP   &kp END     &kp LS(LC(TAB))   &kp LC(TAB)
-                                         &kp LGUI   &trans   &kp SPACE       &kp RET   &trans     &kp RALT
+//    ┌──────┬─────┬─────┬─────┬──────┬──────┐               ┌──────┬──────┬──────┬──────┬─────┬─────────┐
+//    │ tab  │  1  │  2  │  3  │  4   │  5   │               │  6   │  7   │  8   │  9   │  0  │  bspc   │
+//    ├──────┼─────┼─────┼─────┼──────┼──────┤               ├──────┼──────┼──────┼──────┼─────┼─────────┤
+//    │ lsft │ esc │ ins │ del │ tab  │ bspc │               │ left │ down │  up  │ rght │ ent │ lgui(]) │
+//    ├──────┼─────┼─────┼─────┼──────┼──────┤               ├──────┼──────┼──────┼──────┼─────┼─────────┤
+//    │      │     │     │     │      │      │               │      │ pgdn │ pgup │      │     │         │
+//    └──────┴─────┴─────┴─────┼──────┼──────┼─────┐   ┌─────┼──────┼──────┼──────┴──────┴─────┴─────────┘
+//                             │ lgui │      │ spc │   │ ent │      │ ralt │
+//                             └──────┴──────┴─────┘   └─────┴──────┴──────┘
+  &kp TAB     &kp N1       &kp N2    &kp N3    &kp N4     &kp N5                                    &kp N6     &kp N7          &kp N8      &kp N9      &kp N0      &kp BSPC
+  &kp LSHFT   &kp ESCAPE   &kp INS   &kp DEL   &kp TAB    &kp BACKSPACE                             &kp LEFT   &kp DOWN        &kp UP      &kp RIGHT   &kp ENTER   &kp LG(RBKT)
+  &trans      &none        &none     &none     &none      &none                                     &none      &kp PAGE_DOWN   &kp PG_UP   &none       &none       &trans
+                                               &kp LGUI   &trans          &kp SPACE       &kp RET   &trans     &kp RALT
             >;
         };
 
