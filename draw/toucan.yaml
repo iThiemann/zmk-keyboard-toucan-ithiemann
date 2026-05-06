@@ -1,0 +1,232 @@
+layout:
+  ortho_layout:
+    split: true
+    rows: 3
+    columns: 6
+    thumbs: 3
+layers:
+  BASE:
+  - [TAB, Q, W, E, R, T, Y, U, I, O, P, BSPC]
+  - - {t: ESC, h: LSHFT}
+    - {t: A, h: LSHFT}
+    - {t: S, h: RALT}
+    - {t: D, h: SYMB}
+    - {t: F, h: LCTRL}
+    - {t: G, h: LALT}
+    - {t: H, h: LALT}
+    - {t: J, h: RCTRL}
+    - {t: K, h: SYMB}
+    - {t: L, h: RALT}
+    - {t: ;, h: RSHFT}
+    - {t: '''', h: RSHFT}
+  - - LCTRL
+    - Z
+    - X
+    - C
+    - {t: V, h: RGUI}
+    - B
+    - N
+    - {t: M, h: RGUI}
+    - ','
+    - .
+    - /
+    - RCTRL
+  - - {t: FUNC, h: sticky}
+    - {t: ESC, h: MOUS}
+    - {t: SPACE, h: LGUI}
+    - {t: RET, h: LGUI}
+    - {t: BSPC, h: NAVI}
+    - '&Compose1ToNpad'
+  SYMB:
+  - [BSPC, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', BSPC]
+  - - {t: '1', h: toggle}
+    - {t: ESC, h: LSHFT}
+    - {t: INS, h: RALT}
+    - {t: DEL, h: NPAD, type: held}
+    - {t: TAB, h: LCTRL}
+    - {t: BSPC, h: LALT}
+    - {t: LEFT, h: LALT}
+    - {t: DOWN, h: RCTRL}
+    - {t: UP, h: NPAD}
+    - {t: RIGHT, h: RALT}
+    - {t: RET, h: RSHFT}
+    - \
+  - - LCTRL
+    - '`'
+    - '-'
+    - '='
+    - '&td_mt0'
+    - '&td2'
+    - \
+    - {t: '''', h: RGUI}
+    - ','
+    - .
+    - /
+    - RCTRL
+  - - {t: ▽, type: trans}
+    - '&td_mt1'
+    - '&td_mt2'
+    - '&td_mt3'
+    - '&td_mt4'
+    - '&Compose1ToNpad'
+  NAVI:
+  - [TAB, '', '', '', '', '', HOME, DEL, INS, END, BSPC, BSPC]
+  - - {t: ESC, h: LSHFT}
+    - ESC
+    - INS
+    - DEL
+    - TAB
+    - BSPC
+    - LEFT
+    - DOWN
+    - UP
+    - RIGHT
+    - RET
+    - '&td0'
+  - [LCTRL, '', '', '', '', '', '', PG DN, PG UP, '', '', '&td1']
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+  MOUS:
+  - ['', '', '', '', '', '', '', '', '', '', '', '']
+  - ['', '&mkp MB4', '&mkp LCLK', '&mkp MCLK', '&mkp RCLK', '&mkp MB5', '&mmv MOVE_LEFT', '&mmv MOVE_DOWN', '&mmv MOVE_UP', '&mmv MOVE_RIGHT', '&mkp LCLK', '']
+  - - {t: ▽, type: trans}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - '&msc SCRL_LEFT'
+    - '&msc SCRL_DOWN'
+    - '&msc SCRL_UP'
+    - '&msc SCRL_RIGHT'
+    - ''
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  FUNC:
+  - - {t: ▽, type: trans}
+    - F1
+    - F2
+    - F3
+    - F4
+    - F5
+    - F6
+    - F7
+    - F8
+    - F9
+    - F10
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: F11, h: LSHFT}
+    - {t: F12, h: RALT}
+    - F13
+    - {t: F14, h: LCTRL}
+    - {t: F15, h: LALT}
+    - {t: F16, h: LALT}
+    - {t: F17, h: RCTRL}
+    - F18
+    - {t: F19, h: RALT}
+    - {t: F20, h: RSHFT}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - F21
+    - F22
+    - F23
+    - {t: F24, h: RGUI}
+    - ''
+    - ''
+    - RGUI
+    - ''
+    - ''
+    - ''
+    - {t: ▽, type: trans}
+  - - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  NPAD:
+  - [BSPC, U, D, E, F, N, KP SUBTRACT, KP 7, KP 8, KP 9, KP 0, BSPC]
+  - - {t: ▽, type: trans}
+    - KP DIVIDE
+    - KP MULTIPLY
+    - {t: KP EQUAL, h: SYMB, type: held}
+    - TAB
+    - BACKSPACE
+    - KP NUMLOCK
+    - KP 4
+    - {t: KP 5, h: SYMB}
+    - KP 6
+    - KP ENTER
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - X
+    - A
+    - B
+    - C
+    - ':'
+    - KP PLUS
+    - KP 1
+    - KP 2
+    - KP 3
+    - KP DOT
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - '&td_mt1'
+    - '&td_mt2'
+    - '&td_mt3'
+    - '&td_mt4'
+    - '&Compose1ToNpad'
+  SYST:
+  - ['', BT CLR, '', '', '', '&sys_reset', '&sys_reset', BRIGHTNESS DEC, BRIGHTNESS INC, '', '', '']
+  - ['', '', '', OUT USB, OUT BLE, '', MUTE, VOL DN, VOL UP, '', '', '']
+  - - BT CLR ALL
+    - {t: BT, h: '0'}
+    - {t: BT, h: '1'}
+    - {t: BT, h: '2'}
+    - {t: BT, h: '3', type: held}
+    - {t: BT, h: '4'}
+    - PLAY PAUSE
+    - PREV
+    - NEXT
+    - ''
+    - ''
+    - ''
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  COMB:
+  - ['', '', '', '', '', '', '', '', '', '', '', '']
+  - ['', '', '', '', '', '', '', '', '', '', '', '']
+  - ['', '', '', '', '', '', '', '', '', '', '', '']
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+combos:
+- p: [1, 2]
+  k: ESC
+- p: [36, 41]
+  k: CAPS
+- p: [12, 23]
+  k: CAPS
+- p: [37, 40]
+  k: {t: SYMB, h: toggle}
+- p: [28, 38]
+  k: SYST
+- p: [31, 39]
+  k: SYST
