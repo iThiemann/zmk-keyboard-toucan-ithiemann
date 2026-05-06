@@ -175,7 +175,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt LS CAPS>, <&kp LC>;
+            bindings = <&mt LSHIFT CAPSLOCK>, <&kp LCTRL>;
         };
         
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/mod-morph#advanced-configuration
