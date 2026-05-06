@@ -346,19 +346,19 @@
             base {
                 display-name = "BASE";
                 bindings = <
-//    ┌───────────────┬─────────────┬─────────────┬──────────────┬─────────────┬─────────────────┐                                   ┌────────────────┬─────────────────┬──────────────┬─────────────┬─────────────┬─────────────┐
-//    │      tab      │      Q      │      W      │      E       │      R      │        T        │                                   │       Y        │        U        │      I       │      O      │      P      │    bspc     │
-//    ├───────────────┼─────────────┼─────────────┼──────────────┼─────────────┼─────────────────┤                                   ├────────────────┼─────────────────┼──────────────┼─────────────┼─────────────┼─────────────┤
-//    │ &hml lsft esc │ &hml lsft A │ &hml ralt S │ &hml2 SYMB D │ &hml lctl F │   &hml lalt G   │                                   │  &hmr lalt H   │   &hmr rctl J   │ &hmr2 SYMB K │ &hmr ralt L │ &hmr rsft ; │ &hmr rsft ' │
-//    ├───────────────┼─────────────┼─────────────┼──────────────┼─────────────┼─────────────────┤                                   ├────────────────┼─────────────────┼──────────────┼─────────────┼─────────────┼─────────────┤
-//    │     lctl      │      Z      │      X      │      C       │ &hml rgui V │        B        │                                   │       N        │   &hmr rgui M   │      ,       │      .      │      /      │     esc     │
-//    └───────────────┴─────────────┴─────────────┴──────────────┼─────────────┼─────────────────┼───────────────┐   ┌───────────────┼────────────────┼─────────────────┼──────────────┴─────────────┴─────────────┴─────────────┘
-//                                                               │   sl FUNC   │ &my_lt MOUS esc │ &hml lgui spc │   │ &hmr lgui ent │ &hmr NAVI bspc │ &Compose1ToNpad │
-//                                                               └─────────────┴─────────────────┴───────────────┘   └───────────────┴────────────────┴─────────────────┘
-  &kp TAB          &kp Q          &kp W         &kp E          &kp R          &kp T                                                 &kp Y            &kp U             &kp I          &kp O         &kp P             &kp BSPC
-  &hml LSHFT ESC   &hml LSHFT A   &hml RALT S   &hml2 SYMB D   &hml LCTRL F   &hml LALT G                                           &hmr LALT H      &hmr RCTRL J      &hmr2 SYMB K   &hmr RALT L   &hmr RSHFT SEMI   &hmr RSHFT SQT
-  &kp LCTRL        &kp Z          &kp X         &kp C          &hml RGUI V    &kp B                                                 &kp N            &hmr RGUI M       &kp COMMA      &kp DOT       &kp FSLH          &kp ESC
-                                                               &sl FUNC       &my_lt MOUS ESC   &hml LG SPACE       &hmr LGUI RET   &hmr NAVI BSPC   &Compose1ToNpad
+//    ┌───────────────┬─────────────┬─────────────┬──────────────┬─────────────┬─────────────────┐                                   ┌─────────────────┬─────────────────┬──────────────┬─────────────┬─────────────┬─────────────┐
+//    │      tab      │      Q      │      W      │      E       │      R      │        T        │                                   │        Y        │        U        │      I       │      O      │      P      │    bspc     │
+//    ├───────────────┼─────────────┼─────────────┼──────────────┼─────────────┼─────────────────┤                                   ├─────────────────┼─────────────────┼──────────────┼─────────────┼─────────────┼─────────────┤
+//    │ &hml lsft esc │ &hml lsft A │ &hml ralt S │ &hml2 SYMB D │ &hml lctl F │   &hml lalt G   │                                   │   &hmr lalt H   │   &hmr rctl J   │ &hmr2 SYMB K │ &hmr ralt L │ &hmr rsft ; │ &hmr rsft ' │
+//    ├───────────────┼─────────────┼─────────────┼──────────────┼─────────────┼─────────────────┤                                   ├─────────────────┼─────────────────┼──────────────┼─────────────┼─────────────┼─────────────┤
+//    │     lctl      │      Z      │      X      │      C       │ &hml rgui V │        B        │                                   │        N        │   &hmr rgui M   │      ,       │      .      │      /      │     esc     │
+//    └───────────────┴─────────────┴─────────────┴──────────────┼─────────────┼─────────────────┼───────────────┐   ┌───────────────┼─────────────────┼─────────────────┼──────────────┴─────────────┴─────────────┴─────────────┘
+//                                                               │   sl FUNC   │ &my_lt MOUS esc │ &hml lgui spc │   │ &hmr lgui ent │ &hmr2 NAVI bspc │ &Compose1ToNpad │
+//                                                               └─────────────┴─────────────────┴───────────────┘   └───────────────┴─────────────────┴─────────────────┘
+  &kp TAB          &kp Q          &kp W         &kp E          &kp R          &kp T                                                 &kp Y             &kp U             &kp I          &kp O         &kp P             &kp BSPC
+  &hml LSHFT ESC   &hml LSHFT A   &hml RALT S   &hml2 SYMB D   &hml LCTRL F   &hml LALT G                                           &hmr LALT H       &hmr RCTRL J      &hmr2 SYMB K   &hmr RALT L   &hmr RSHFT SEMI   &hmr RSHFT SQT
+  &kp LCTRL        &kp Z          &kp X         &kp C          &hml RGUI V    &kp B                                                 &kp N             &hmr RGUI M       &kp COMMA      &kp DOT       &kp FSLH          &kp ESC
+                                                               &sl FUNC       &my_lt MOUS ESC   &hml LG SPACE       &hmr LGUI RET   &hmr2 NAVI BSPC   &Compose1ToNpad
             >;
         };
 
@@ -492,25 +492,6 @@
   &kp LCTRL   &trans   &kp F4   &kp F5   &kp F6     &kp F11                              &trans         &trans       &trans         &trans   &trans   &trans
   &kp LSHFT   &trans   &kp F1   &kp F2   &kp F3     &kp F10                              &trans         &trans       &trans         &trans   &trans   &trans
                                          &kp LGUI   &mo SYMB   &kp SPACE       &kp RET   &mo NAVI       &kp RALT
-            >;
-        };
-
-            extr {
-                display-name = "EXTR";
-                bindings = <
-//    ┌────────┬────────────────┬──────────┬──────────┬──────────┬──────────┐               ┌──────┬──────┬──────┬──────┬───────────┬─────────────────┐
-//    │  tab   │       1        │    2     │    3     │    4     │    5     │               │  6   │  7   │  8   │  9   │     0     │      bspc       │
-//    ├────────┼────────────────┼──────────┼──────────┼──────────┼──────────┤               ├──────┼──────┼──────┼──────┼───────────┼─────────────────┤
-//    │ bt_clr │    bt_sel 0    │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │ bt_sel 4 │               │ left │ down │  up  │ rght │  lgui([)  │     lgui(])     │
-//    ├────────┼────────────────┼──────────┼──────────┼──────────┼──────────┤               ├──────┼──────┼──────┼──────┼───────────┼─────────────────┤
-//    │  lsft  │ &studio_unlock │          │          │          │          │               │ home │ pgdn │ pgup │ end  │ lctl(tab) │ lsft(lctl(tab)) │
-//    └────────┴────────────────┴──────────┴──────────┼──────────┼──────────┼─────┐   ┌─────┼──────┼──────┼──────┴──────┴───────────┴─────────────────┘
-//                                                    │   lgui   │          │ spc │   │ ent │      │ ralt │
-//                                                    └──────────┴──────────┴─────┘   └─────┴──────┴──────┘
-  &kp TAB      &kp N1           &kp N2         &kp N3         &kp N4         &kp N5                                   &kp N6     &kp N7      &kp N8      &kp N9      &kp N0         &kp BSPC
-  &bt BT_CLR   &bt BT_SEL 0     &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                             &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &kp LG(LBKT)   &kp LG(RBKT)
-  &kp LSHFT    &studio_unlock   &trans         &trans         &trans         &trans                                   &kp HOME   &kp PG_DN   &kp PG_UP   &kp END     &kp LC(TAB)    &kp LS(LC(TAB))
-                                                              &kp LGUI       &trans         &kp SPACE       &kp RET   &trans     &kp RALT
             >;
         };
 
