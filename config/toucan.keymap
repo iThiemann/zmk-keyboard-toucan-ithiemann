@@ -259,14 +259,11 @@
             ignore-modifiers;
         };
         
-        // slq: sticky_layer_quick_release {
-        //     compatible = "zmk,behavior-sticky-layer";
-        //     #binding-cells = <1>;
-        //     bindings = <&kp>;
-        //     release-after-ms = <1000>;
-        //     quick-release;
-        //     ignore-modifiers;
-        // }
+        slq: sticky_layer {
+            release-after-ms = <1500>;
+            quick-release;
+            ignore-modifiers;
+        };
 
         // https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/mouse-emulation
         // Mouse Button Press &mkp
@@ -363,13 +360,13 @@
 };
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-            };
-        };
+    // conditional_layers {
+    //     compatible = "zmk,conditional-layers";
+    //     tri_layer {
+    //         if-layers = <1 2>;
+    //         then-layer = <3>;
+    //         };
+    //     };
 
         keymap {
             compatible = "zmk,keymap";
