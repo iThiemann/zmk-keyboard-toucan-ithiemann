@@ -346,37 +346,37 @@
         symb {
             display-name = "SYMB";
             bindings = <
-//    ┌───────────────┬───────────────┬───────────────┬────────────────┬───────────────┬────────────────┐               ┌────────────────┬────────────────┬───────────────┬────────────────┬───────────────┬──────┐
-//    │       `       │       1       │       2       │       3        │       4       │       5        │               │       6        │       7        │       8       │       9        │       0       │ bspc │
-//    ├───────────────┼───────────────┼───────────────┼────────────────┼───────────────┼────────────────┤               ├────────────────┼────────────────┼───────────────┼────────────────┼───────────────┼──────┤
-//    │ &hml lsft esc │ &hml lsft esc │ &hml ralt ins │ &hml2 NAVI del │ &hml lctl tab │ &hml lalt bspc │               │ &hmr lalt left │ &hmr rctl down │ &hmr2 NAVI up │ &hmr ralt rght │ &hmr rsft ent │  \   │
-//    ├───────────────┼───────────────┼───────────────┼────────────────┼───────────────┼────────────────┤               ├────────────────┼────────────────┼───────────────┼────────────────┼───────────────┼──────┤
-//    │     lctl      │       `       │       -       │       =        │  &hml rgui [  │       ]        │               │       \        │  &hmr rgui '   │       ,       │       .        │       /       │ rctl │
-//    └───────────────┴───────────────┴───────────────┴────────────────┼───────────────┼────────────────┼─────┐   ┌─────┼────────────────┼────────────────┼───────────────┴────────────────┴───────────────┴──────┘
-//                                                                     │               │    to BASE     │     │   │     │    to BASE     │                │
-//                                                                     └───────────────┴────────────────┴─────┘   └─────┴────────────────┴────────────────┘
-  &kp GRAVE        &kp N1           &kp N2          &kp N3           &kp N4           &kp N5                                 &kp N6           &kp N7            &kp N8          &kp N9            &kp N0           &kp BSPC
-  &hml LSHFT ESC   &hml LSHFT ESC   &hml RALT INS   &hml2 NAVI DEL   &hml LCTRL TAB   &hml LALT BSPC                         &hmr LALT LEFT   &hmr RCTRL DOWN   &hmr2 NAVI UP   &hmr RALT RIGHT   &hmr RSHFT RET   &kp BSLH
-  &kp LCTRL        &kp GRAVE        &kp MINUS       &kp EQUAL        &hml RGUI LBKT   &kp RBKT                               &kp BSLH         &hmr RGUI SQT     &kp COMMA       &kp PERIOD        &kp FSLH         &kp RCTRL
-                                                                     &trans           &to BASE         &trans       &trans   &to BASE         &trans
+//    ┌───────────────┬───────────────┬───────────────┬────────────────┬──────────────────┬────────────────┐               ┌────────────────┬────────────────┬───────────────┬────────────────┬───────────────┬──────┐
+//    │       `       │       1       │       2       │       3        │        4         │       5        │               │       6        │       7        │       8       │       9        │       0       │ bspc │
+//    ├───────────────┼───────────────┼───────────────┼────────────────┼──────────────────┼────────────────┤               ├────────────────┼────────────────┼───────────────┼────────────────┼───────────────┼──────┤
+//    │ &hml lsft esc │ &hml lsft esc │ &hml ralt ins │ &hml2 NAVI del │  &hml lctl tab   │ &hml lalt bspc │               │ &hmr lalt left │ &hmr rctl down │ &hmr2 NAVI up │ &hmr ralt rght │ &hmr rsft ent │  \   │
+//    ├───────────────┼───────────────┼───────────────┼────────────────┼──────────────────┼────────────────┤               ├────────────────┼────────────────┼───────────────┼────────────────┼───────────────┼──────┤
+//    │     lctl      │       `       │       -       │       =        │ &td_mt0_rgui_[_{ │    &td2_]_}    │               │       \        │  &hmr rgui '   │       ,       │       .        │       /       │ rctl │
+//    └───────────────┴───────────────┴───────────────┴────────────────┼──────────────────┼────────────────┼─────┐   ┌─────┼────────────────┼────────────────┼───────────────┴────────────────┴───────────────┴──────┘
+//                                                                     │                  │    to BASE     │     │   │     │    to BASE     │                │
+//                                                                     └──────────────────┴────────────────┴─────┘   └─────┴────────────────┴────────────────┘
+  &kp GRAVE        &kp N1           &kp N2          &kp N3           &kp N4                 &kp N5                                 &kp N6           &kp N7            &kp N8          &kp N9            &kp N0           &kp BSPC
+  &hml LSHFT ESC   &hml LSHFT ESC   &hml RALT INS   &hml2 NAVI DEL   &hml LCTRL TAB         &hml LALT BSPC                         &hmr LALT LEFT   &hmr RCTRL DOWN   &hmr2 NAVI UP   &hmr RALT RIGHT   &hmr RSHFT RET   &kp BSLH
+  &kp LCTRL        &kp GRAVE        &kp MINUS       &kp EQUAL        &td_mt0_RG_LBKT_LBRC   &td2_RBKT_RBRC                         &kp BSLH         &hmr RGUI SQT     &kp COMMA       &kp PERIOD        &kp FSLH         &kp RCTRL
+                                                                     &trans                 &to BASE         &trans       &trans   &to BASE         &trans
             >;
         };
 
         navi {
             display-name = "NAVI";
             bindings = <
-//    ┌───────────────┬─────┬─────┬─────┬─────┬──────┐               ┌──────┬──────┬──────┬──────┬──────┬──────┐
-//    │      tab      │     │     │     │     │      │               │ home │ del  │ ins  │ end  │ bspc │ bspc │
-//    ├───────────────┼─────┼─────┼─────┼─────┼──────┤               ├──────┼──────┼──────┼──────┼──────┼──────┤
-//    │ &hml lsft esc │ esc │ ins │ del │ tab │ bspc │               │ left │ down │  up  │ rght │ ent  │ &td0 │
-//    ├───────────────┼─────┼─────┼─────┼─────┼──────┤               ├──────┼──────┼──────┼──────┼──────┼──────┤
-//    │     lctl      │     │     │     │     │      │               │      │ pgdn │ pgup │      │      │ &td1 │
-//    └───────────────┴─────┴─────┴─────┼─────┼──────┼─────┐   ┌─────┼──────┼──────┼──────┴──────┴──────┴──────┘
+//    ┌───────────────┬─────┬─────┬─────┬─────┬──────┐               ┌──────┬──────┬──────┬──────┬──────┬────────────────────────┐
+//    │      tab      │     │     │     │     │      │               │ home │ del  │ ins  │ end  │ bspc │          bspc          │
+//    ├───────────────┼─────┼─────┼─────┼─────┼──────┤               ├──────┼──────┼──────┼──────┼──────┼────────────────────────┤
+//    │ &hml lsft esc │ esc │ ins │ del │ tab │ bspc │               │ left │ down │  up  │ rght │ ent  │   &td0_brave_bck_fwd   │
+//    ├───────────────┼─────┼─────┼─────┼─────┼──────┤               ├──────┼──────┼──────┼──────┼──────┼────────────────────────┤
+//    │     lctl      │     │     │     │     │      │               │      │ pgdn │ pgup │      │      │ &td1_brave_tab_fwd_bck │
+//    └───────────────┴─────┴─────┴─────┼─────┼──────┼─────┐   ┌─────┼──────┼──────┼──────┴──────┴──────┴────────────────────────┘
 //                                      │     │      │     │   │     │      │      │
 //                                      └─────┴──────┴─────┘   └─────┴──────┴──────┘
   &kp TAB          &none     &none     &none     &none     &none                            &kp HOME   &kp DEL     &kp INS     &kp END     &kp BSPC   &kp BSPC
-  &hml LSHFT ESC   &kp ESC   &kp INS   &kp DEL   &kp TAB   &kp BSPC                         &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &kp RET    &td0
-  &kp LCTRL        &none     &none     &none     &none     &none                            &none      &kp PG_DN   &kp PG_UP   &none       &none      &td1
+  &hml LSHFT ESC   &kp ESC   &kp INS   &kp DEL   &kp TAB   &kp BSPC                         &kp LEFT   &kp DOWN    &kp UP      &kp RIGHT   &kp RET    &td0_brave_bck_fwd
+  &kp LCTRL        &none     &none     &none     &none     &none                            &none      &kp PG_DN   &kp PG_UP   &none       &none      &td1_brave_tab_fwd_bck
                                                  &trans    &trans     &trans       &trans   &trans     &trans
             >;
         };
