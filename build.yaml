@@ -19,9 +19,12 @@
 #
 ---
 include:
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble
     shield: toucan_left rgbled_adapter nice_view_gem
-  - board: xiao_ble 
+    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_PM_SOFT_OFF=y
+  - board: seeeduino_xiao_ble 
     shield: toucan_right rgbled_adapter
+    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_PM_SOFT_OFF=y
+
 #  - board: seeeduino_xiao_ble
 #    shield: settings_reset
