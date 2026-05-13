@@ -22,11 +22,15 @@ include:
   - board: xiao_ble
     shield: toucan_left rgbled_adapter nice_view_gem
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_PM_SOFT_OFF=y
+    cmake-args: -DEXTRA_CONF_FILE=boards/shields/toucan/toucan_left_studio.conf
+    # cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_PM_SOFT_OFF=y
+  - board: xiao_ble
+    shield: toucan_left rgbled_adapter nice_view_gem
+    # cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_PM_SOFT_OFF=y
   - board: xiao_ble 
     shield: toucan_right rgbled_adapter
-    cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_PM_SOFT_OFF=y
+    # cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_PM_SOFT_OFF=y
   - board: xiao_ble
-    shield: settings_reset
+    shield: :settings_reset
   - board: xiao_ble
     shield: tester_xiao
