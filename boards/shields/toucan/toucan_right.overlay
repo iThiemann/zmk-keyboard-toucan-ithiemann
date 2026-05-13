@@ -1,6 +1,7 @@
 #include "toucan.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <dt-bindings/input/input-event-codes.h>
 
 &xiao_i2c {
     status = "disabled";
@@ -72,7 +73,6 @@
         // the trackpad will go to sleep.  It wakes up on touch, but there is a ~300ms delay.  Most users will find
         // the standard behavior of 'put to sleep when zmk enters idle state (30 seconds without a keypress) feels better.
 	    //sleep;
-	            // Enable tap + gesture support
     };
 };
 
@@ -81,4 +81,33 @@
        
     // Optional
     // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+};
+
+/* Auto-activate layer 2 for pointing input */
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer 2 2000>;
+};
+
+&mmv_input_listener {
+    input-processors = <&zip_temp_layer 2 2000>;
+};
+
+&msc_input_listener {
+    input-processors = <&zip_temp_layer 2 2000>;
+};
+
+/* Mouse movement tuning */
+&mmv {
+    x-input-code = <INPUT_REL_X>;
+    y-input-code = <INPUT_REL_Y>;
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <1>;
+};
+
+/* Mouse scroll tuning */
+&msc {
+    x-input-code = <INPUT_REL_HWHEEL>;
+    y-input-code = <INPUT_REL_WHEEL>;
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <0>;
 };
