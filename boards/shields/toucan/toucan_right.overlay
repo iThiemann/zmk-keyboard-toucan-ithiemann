@@ -73,20 +73,12 @@
         // the standard behavior of 'put to sleep when zmk enters idle state (30 seconds without a keypress) feels better.
 	    //sleep;
 	            // Enable tap + gesture support
-        tap;
-        tap-time-ms = <180>;
-        secondary-tap;            // two-finger tap enabled
-        scroll;
-        scroll-divisor = <4>;     // smoother, less aggressive scroll
-        drag-lock;
-    };
+            };
 };
 
 &glidepoint_split {
     device = <&glidepoint>;
        
-    // Slight additional scaling to improve perceived responsiveness
-    input-processors = <&zip_xy_scaler 12 12>;
     // Optional
     // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
