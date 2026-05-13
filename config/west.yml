@@ -4,14 +4,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: petejohanson
-      url-base: https://github.com/petejohanson/
-    - name: caksoylar
-      url-base: https://github.com/caksoylar
-    - name: geeksville
-      url-base: https://github.com/geeksville
-    - name: halfdane
-      url-base: https://github.com/halfdane/
+    # - name: petejohanson
+    #   url-base: https://github.com/petejohanson/
+    # - name: caksoylar
+    #   url-base: https://github.com/caksoylar
+    # - name: geeksville
+    #   url-base: https://github.com/geeksville
+    # - name: halfdane
+    #   url-base: https://github.com/halfdane/
     - name: prospector
       url-base: https://github.com/t-ogura
   projects:
