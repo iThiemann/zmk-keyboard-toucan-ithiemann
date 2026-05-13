@@ -30,7 +30,7 @@ include:
   - board: xiao_ble 
     shield: toucan_right rgbled_adapter
     # cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_PM_SOFT_OFF=y
-  - board: xiao_ble
-    shield: :settings_reset
-  - board: xiao_ble
-    shield: tester_xiao
+  # - board: xiao_ble
+  #   shield: :settings_reset
+  # - board: xiao_ble
+  #   shield: tester_xiao
