@@ -63,7 +63,7 @@
         spi-max-frequency = <1000000>;
         status = "okay";
         dr-gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH)>;
-        sensitivity = "2x"; // 2x feels too jumpy IMO
+        sensitivity = "3x"; // 2x feels too jumpy IMO
         x-invert;
         // y-invert; // needed for abs mode?  not sure why it wasn't needed in relative
         // abs-rel-divisor = <1>;
@@ -72,12 +72,21 @@
         // the trackpad will go to sleep.  It wakes up on touch, but there is a ~300ms delay.  Most users will find
         // the standard behavior of 'put to sleep when zmk enters idle state (30 seconds without a keypress) feels better.
 	    //sleep;
+	            // Enable tap + gesture support
+        tap;
+        tap-time-ms = <180>;
+        secondary-tap;            // two-finger tap enabled
+        scroll;
+        scroll-divisor = <4>;     // smoother, less aggressive scroll
+        drag-lock;
     };
 };
 
 &glidepoint_split {
     device = <&glidepoint>;
-
+       
+    // Slight additional scaling to improve perceived responsiveness
+    input-processors = <&zip_xy_scaler 12 12>;
     // Optional
     // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
