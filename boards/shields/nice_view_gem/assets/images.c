@@ -36,7 +36,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_GRID uint
 const lv_image_dsc_t grid = {
     .header.cf = LV_COLOR_FORMAT_I1,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 67,
     .header.h = 33,
     .data_size = 305,
@@ -63,7 +63,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_PROFILES 
 const lv_image_dsc_t profiles = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 48,
     .header.h = 8,
     .data_size = 56,
@@ -100,7 +100,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_L_BATTERY
 const lv_image_dsc_t l_battery_100 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 60,
     .header.h = 17,
     .data_size = 144,
@@ -136,7 +136,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_L_BATTERY
 const lv_image_dsc_t l_battery_90 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 60,
     .header.h = 17,
     .data_size = 144,
@@ -172,7 +172,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_L_BATTERY
 const lv_image_dsc_t l_battery_75 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 60,
     .header.h = 17,
     .data_size = 144,
@@ -208,7 +208,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_L_BATTERY
 const lv_image_dsc_t l_battery_50 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 60,
     .header.h = 17,
     .data_size = 144,
@@ -244,7 +244,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_L_BATTERY
 const lv_image_dsc_t l_battery_25 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 60,
     .header.h = 17,
     .data_size = 144,
@@ -280,7 +280,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_L_BATTERY
 const lv_image_dsc_t l_battery_10 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 60,
     .header.h = 17,
     .data_size = 144,
@@ -318,7 +318,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_R_BATTERY
 const lv_image_dsc_t r_battery_100 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 60,
     .header.h = 17,
     .data_size = 144,
@@ -354,7 +354,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_R_BATTERY
 const lv_image_dsc_t r_battery_90 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 60,
     .header.h = 17,
     .data_size = 144,
@@ -390,7 +390,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_R_BATTERY
 const lv_image_dsc_t r_battery_75 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 60,
     .header.h = 17,
     .data_size = 144,
@@ -426,7 +426,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_R_BATTERY
 const lv_image_dsc_t r_battery_50 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 60,
     .header.h = 17,
     .data_size = 144,
@@ -462,7 +462,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_R_BATTERY
 const lv_image_dsc_t r_battery_25 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2_2 = 0,
     .header.w = 60,
     .header.h = 17,
     .data_size = 144,
@@ -498,7 +498,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_R_BATTERY
 const lv_image_dsc_t r_battery_10 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
     .header.magic = LV_IMAGE_HEADER_MAGIC,
-    .header.reserved = 0,
+    .header.reserved_2 = 0,
     .header.w = 60,
     .header.h = 17,
     .data_size = 144,
