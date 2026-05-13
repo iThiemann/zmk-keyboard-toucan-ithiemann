@@ -4,8 +4,8 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // To override the default movement or scrolling max velocities 
-// #define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
-// #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 #include <dt-bindings/zmk/pointing.h>
 
 // Autoshift Macro
@@ -448,16 +448,16 @@
         syst {
             display-name = "SYST";
             bindings = <
-//    ┌────────────────┬──────────┬──────────┬──────────┬──────────┬────────────┐               ┌────────────┬──────┬──────┬─────┬─────┬─────┐
-//    │ &studio_unlock │  bt_clr  │          │          │          │ &sys_reset │               │ &sys_reset │ bri- │ bri+ │     │     │     │
-//    ├────────────────┼──────────┼──────────┼──────────┼──────────┼────────────┤               ├────────────┼──────┼──────┼─────┼─────┼─────┤
-//    │                │          │          │ out_ usb │ out_ ble │            │               │    mute    │ vold │ volu │     │     │     │
-//    ├────────────────┼──────────┼──────────┼──────────┼──────────┼────────────┤               ├────────────┼──────┼──────┼─────┼─────┼─────┤
-//    │   bt_clr_ALL   │ bt_sel 0 │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │  bt_sel 4  │               │    play    │ prev │ next │     │     │     │
-//    └────────────────┴──────────┴──────────┴──────────┼──────────┼────────────┼─────┐   ┌─────┼────────────┼──────┼──────┴─────┴─────┴─────┘
-//                                                      │          │            │     │   │     │            │      │
-//                                                      └──────────┴────────────┴─────┘   └─────┴────────────┴──────┘
-  &studio_unlock   &bt BT_CLR     &none          &none          &none          &sys_reset                           &sys_reset         &kp C_BRIGHTNESS_DEC   &kp C_BRIGHTNESS_INC   &none   &none   &none
+//    ┌────────────┬──────────┬──────────┬──────────┬──────────┬────────────┐               ┌────────────┬──────┬──────┬─────┬─────┬─────┐
+//    │            │  bt_clr  │          │          │          │ &sys_reset │               │ &sys_reset │ bri- │ bri+ │     │     │     │
+//    ├────────────┼──────────┼──────────┼──────────┼──────────┼────────────┤               ├────────────┼──────┼──────┼─────┼─────┼─────┤
+//    │            │          │          │ out_ usb │ out_ ble │            │               │    mute    │ vold │ volu │     │     │     │
+//    ├────────────┼──────────┼──────────┼──────────┼──────────┼────────────┤               ├────────────┼──────┼──────┼─────┼─────┼─────┤
+//    │ bt_clr_ALL │ bt_sel 0 │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │  bt_sel 4  │               │    play    │ prev │ next │     │     │     │
+//    └────────────┴──────────┴──────────┴──────────┼──────────┼────────────┼─────┐   ┌─────┼────────────┼──────┼──────┴─────┴─────┴─────┘
+//                                                  │          │            │     │   │     │            │      │
+//                                                  └──────────┴────────────┴─────┘   └─────┴────────────┴──────┘
+  &none            &bt BT_CLR     &none          &none          &none          &sys_reset                           &sys_reset         &kp C_BRIGHTNESS_DEC   &kp C_BRIGHTNESS_INC   &none   &none   &none
   &none            &none          &none          &out OUT_USB   &out OUT_BLE   &none                                &kp C_MUTE         &kp C_VOL_DN           &kp C_VOL_UP           &none   &none   &none
   &bt BT_CLR_ALL   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                         &kp K_PLAY_PAUSE   &kp K_PREV             &kp C_NEXT             &none   &none   &none
                                                                 &trans         &trans         &trans       &trans   &trans             &trans
