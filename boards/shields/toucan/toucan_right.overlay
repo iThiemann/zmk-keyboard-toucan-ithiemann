@@ -84,9 +84,9 @@
 };
 
 /* Auto-activate layer 2 for pointing input */
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer 2 2000>;
-};
+// &mkp_input_listener {
+//     input-processors = <&zip_temp_layer 2 2000>;
+// };
 
 &mmv_input_listener {
     input-processors = <&zip_temp_layer 2 2000>;
