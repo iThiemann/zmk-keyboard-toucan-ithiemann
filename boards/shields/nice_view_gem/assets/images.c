@@ -33,9 +33,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_GRID uint
     0xaa, 0x95, 0x52, 0xaa, 0x55, 0x4a, 0xa9, 0x55, 0x20,
 };
 
-const lv_img_dsc_t grid = {
+const lv_image_dsc_t grid = {
     .header.cf = LV_COLOR_FORMAT_I1,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 67,
     .header.h = 33,
@@ -60,9 +60,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_PROFILES 
     0xff, 0x3f, 0xcf, 0xf3, 0xfc, 0xff, 
 };
 
-const lv_img_dsc_t profiles = {
+const lv_image_dsc_t profiles = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 48,
     .header.h = 8,
@@ -97,9 +97,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_L_BATTERY
     0xff, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 
 };
 
-const lv_img_dsc_t l_battery_100 = {
+const lv_image_dsc_t l_battery_100 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 60,
     .header.h = 17,
@@ -133,9 +133,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_L_BATTERY
     0xff, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 
 };
 
-const lv_img_dsc_t l_battery_90 = {
+const lv_image_dsc_t l_battery_90 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 60,
     .header.h = 17,
@@ -169,9 +169,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_L_BATTERY
     0xff, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 
 };
 
-const lv_img_dsc_t l_battery_75 = {
+const lv_image_dsc_t l_battery_75 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 60,
     .header.h = 17,
@@ -205,9 +205,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_L_BATTERY
     0xff, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 
 };
 
-const lv_img_dsc_t l_battery_50 = {
+const lv_image_dsc_t l_battery_50 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 60,
     .header.h = 17,
@@ -241,9 +241,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_L_BATTERY
     0xff, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 
 };
 
-const lv_img_dsc_t l_battery_25 = {
+const lv_image_dsc_t l_battery_25 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 60,
     .header.h = 17,
@@ -277,9 +277,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_L_BATTERY
     0xff, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 
 };
 
-const lv_img_dsc_t l_battery_10 = {
+const lv_image_dsc_t l_battery_10 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 60,
     .header.h = 17,
@@ -315,9 +315,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_R_BATTERY
     0xff, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 
 };
 
-const lv_img_dsc_t r_battery_100 = {
+const lv_image_dsc_t r_battery_100 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 60,
     .header.h = 17,
@@ -351,9 +351,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_R_BATTERY
     0xff, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 
 };
 
-const lv_img_dsc_t r_battery_90 = {
+const lv_image_dsc_t r_battery_90 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 60,
     .header.h = 17,
@@ -387,9 +387,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_R_BATTERY
     0xff, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 
 };
 
-const lv_img_dsc_t r_battery_75 = {
+const lv_image_dsc_t r_battery_75 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 60,
     .header.h = 17,
@@ -423,9 +423,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_R_BATTERY
     0xff, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 
 };
 
-const lv_img_dsc_t r_battery_50 = {
+const lv_image_dsc_t r_battery_50 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 60,
     .header.h = 17,
@@ -459,9 +459,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_R_BATTERY
     0xff, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 
 };
 
-const lv_img_dsc_t r_battery_25 = {
+const lv_image_dsc_t r_battery_25 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 60,
     .header.h = 17,
@@ -495,9 +495,9 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_R_BATTERY
     0xff, 0xfe, 0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 
 };
 
-const lv_img_dsc_t r_battery_10 = {
+const lv_image_dsc_t r_battery_10 = {
     .header.cf = LV_IMG_CF_INDEXED_1BIT,
-    .header.always_zero = 0,
+    .header.magic = LV_IMAGE_HEADER_MAGIC,
     .header.reserved = 0,
     .header.w = 60,
     .header.h = 17,
