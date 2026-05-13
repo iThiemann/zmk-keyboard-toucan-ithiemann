@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: geeksville
       url-base: https://github.com/geeksville
+    - name: halfdane
+      url-base: https://github.com/halfdane/
     - name: prospector
       url-base: https://github.com/t-ogura
   projects:
@@ -22,6 +24,17 @@ manifest:
     - name: cirque-input-module
       remote: geeksville
       revision: main 
+    # # Add this:
+    # - name: zmk-input-gestures
+    #   remote: halfdane
+    #   revision: main
+    # # Add these if you want to use absolute mode:
+    # - name: zmk-input-processors
+    #   remote: halfdane
+    #   revision: main
+    # - name: cirque-input-module
+    #   remote: halfdane
+    #   revision: absolute_mode
     - name: zmk-rgbled-widget
       remote: caksoylar
       #revision: main
