@@ -4,8 +4,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # - name: petejohanson
-    #   url-base: https://github.com/petejohanson/
+    - name: petejohanson
+      url-base: https://github.com/petejohanson/
     - name: caksoylar
       url-base: https://github.com/caksoylar
     # - name: geeksville
@@ -17,11 +17,12 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.3.0
+      #  revision: main
       import: app/west.yml
-    # - name: cirque-input-module
-    #   remote: petejohanson
-    #   revision: main
+    - name: cirque-input-module
+      remote: petejohanson
+      revision: main
     # - name: cirque-input-module
     #   remote: geeksville
     #   revision: main 
@@ -38,12 +39,12 @@ manifest:
     #   revision: absolute_mode
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: main
-      # revision: v0.3
+      # revision: main
+      revision: v0.3
     - name: prospector-zmk-module
       remote: prospector
-      # revision: v2.0.0
-      revision: main
+      revision: v2.0.0
+      #revision: main
       path: modules/prospector-zmk-module
   self:
     path: config
